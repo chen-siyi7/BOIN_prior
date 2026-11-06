@@ -1,0 +1,8 @@
+{
+  "mode": "replay",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "total_seconds": 420.4095,
+  "peak_child_memory_MiB": 3275.3438,
+  "scope": "Complete added-stage workflow from the supplied frozen earlier rules, priors and partitions. Original nominal-comparison construction has a separate full timing record.",
+  "measurement": "Original workflow, not the current R/Rcpp replay"
+}

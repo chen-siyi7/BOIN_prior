@@ -1,0 +1,26 @@
+{
+  "results": [
+    {
+      "rule": "primary_MN",
+      "directed_upper_pp": "0.029003798532408333940025380599625215669990448917556",
+      "risk_prices": 3
+    },
+    {
+      "rule": "expanded_MN",
+      "directed_upper_pp": "0.18660081922142980539334746498341122027457530386522",
+      "risk_prices": 6
+    },
+    {
+      "rule": "primary_DD",
+      "directed_upper_pp": "0.0061233521068389897130795264884750389639968383672762",
+      "risk_prices": 2
+    },
+    {
+      "rule": "expanded_DD",
+      "directed_upper_pp": "0.13321558057172807023029012803369677827742683232390",
+      "risk_prices": 8
+    }
+  ],
+  "seconds": 48.80811333283782,
+  "scope": "All eligible deterministic or randomized terminal rules with that row's endpoint/status choices and uniform risk limits; nominal lambda 1, underdose cost .25, no-recommendation cost .5."
+}

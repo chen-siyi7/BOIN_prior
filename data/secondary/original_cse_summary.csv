@@ -1,0 +1,4 @@
+"method","initial_cells","final_cells","evaluated_cells","upper_pp","passing_percent","unresolved_cells","seconds","status","independent_pass","independent_seconds"
+"Ordered likelihood",1716,2724,3732,1.99999492787954,100,0,1.234,"target reached",TRUE,0.55
+"CSE independent",1716,174716,347716,16.7135662357435,63.3811656080057,170448,60.2,"time limit",NA,NA
+"CSE stopping",1716,149716,297716,12.7821593444115,69.9033818580366,117963,60.314,"time limit",NA,NA

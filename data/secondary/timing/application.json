@@ -1,0 +1,8 @@
+{
+  "mode": "replay",
+  "total_seconds": 33.3009,
+  "peak_child_memory_MiB": 972.4844,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "scope": "Complete application revision from earlier frozen rules, priors, catalogs and existing evaluation curves. Earlier risk/gain construction has separate replay records. Saved original decisions define article values; replayed fits are alternative independently checked incumbents.",
+  "measurement": "Original workflow, not the current R/Rcpp replay"
+}

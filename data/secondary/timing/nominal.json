@@ -1,0 +1,31 @@
+{
+  "stages": [
+    {
+      "stage": "base",
+      "wall_seconds": 174.9809,
+      "exit_code": 0,
+      "source_sha256": "2d8ee35e85b1fe25eaf1420dc6eba272f2cc463c2aae371ddd8a81c6a3a93f7a"
+    },
+    {
+      "stage": "expanded",
+      "wall_seconds": 477.7612,
+      "exit_code": 0,
+      "source_sha256": "efa911438c136eecbd33f5149ae6bf75301e6b99c8d554f5a14a723abc3e59bd"
+    },
+    {
+      "stage": "matched",
+      "wall_seconds": 169.9121,
+      "exit_code": 0,
+      "source_sha256": "3ecca3b0172e762781baee8bd9bce88ee759eb1a30344dd93e29d1d06623184d"
+    },
+    {
+      "stage": "selection",
+      "wall_seconds": 10.639,
+      "exit_code": 0,
+      "source_sha256": "0cab03804260af10170211dd03a16ad5653f8cc4bcf3dbb1127905fdae1e6b1f"
+    }
+  ],
+  "total_seconds": 833.2959,
+  "peak_MiB": 4587.5625,
+  "measurement": "Original workflow, not the current R/Rcpp replay"
+}

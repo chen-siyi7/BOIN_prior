@@ -1,0 +1,17 @@
+phase,seconds,returncode
+Isolated input copy,1.0496426671743393,0
+Streamed construction,695.3897396661341,0
+Endpoint pair example,4.308291375637054,0
+Adaptive verification comparison,130.68372229207307,0
+Export decisions,0.1769244996830821,0
+Frozen evaluation,2.78475212585181,0
+Paired recommendation changes,10.952634625136852,0
+Scalar moment cases,2.8478469159454107,0
+Earlier independent risk replay,19.426981958560646,0
+Current independent risk replay,8.439635000191629,0
+Directed gains and minimum sizes,1.7503646658733487,0
+Export comparison geometry,0.4353222092613578,0
+Independent comparison geometry,1.5942742908373475,0
+Independent CSE moments,1.3076054994016886,0
+Streamed memory study,3.8599277921020985,0
+Standalone short table,0.0414585005491972,0

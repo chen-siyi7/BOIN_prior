@@ -1,0 +1,12 @@
+cff-version: 1.2.0
+message: "Please cite this code and the accompanying manuscript when using these analyses."
+type: software
+title: "Code for The value of prior information for final dose selection in Bayesian optimal interval trials"
+authors:
+  - family-names: Chen
+    given-names: Siyi
+    affiliation: "LSU Health Sciences Center, New Orleans"
+version: "2026.11.06"
+date-released: "2026-11-06"
+repository-code: "https://github.com/chen-siyi7/location-regularized-BOIN-selection"
+license: MIT

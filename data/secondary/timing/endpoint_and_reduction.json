@@ -1,0 +1,8 @@
+{
+  "mode": "replay",
+  "total_seconds": 885.0542,
+  "peak_child_memory_MiB": 3646.8906,
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "scope": "Complete November 3 stage from the supplied earlier frozen catalog, partition, priors and rules, including earlier and current independent risk checks. Earlier construction stages have separate timing records.",
+  "measurement": "Original workflow, not the current R/Rcpp replay"
+}

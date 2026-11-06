@@ -1,0 +1,46 @@
+[
+  {
+    "policy": "central_sparse80",
+    "changed_states": 33,
+    "fraction": "0.8",
+    "one_fewer_changes_gain_upper_pp": "0.759035031560882110169153865373678450128491779954309406454296",
+    "target_lower_pp": "0.762118076747628880752102411421083383404713939558000841792052",
+    "attained_lower_pp": "0.764611126169221237973843293164414192352631540120007238668918",
+    "target_upper_pp": "0.762118076747628880752102411421083383404713939558000841804643",
+    "minimum_count_proved": true,
+    "scope": "Subsets of the original saved departures, with the same nominal finite planning prior."
+  },
+  {
+    "policy": "central_sparse90",
+    "changed_states": 59,
+    "fraction": "0.9",
+    "one_fewer_changes_gain_upper_pp": "0.857104343101296066165394276887165501022887257292798259481004",
+    "target_lower_pp": "0.857382836341082490846115212848718806330303182002750947016058",
+    "attained_lower_pp": "0.857808933499485491180100685883874892664214780192065750778534",
+    "target_upper_pp": "0.857382836341082490846115212848718806330303182002750947030223",
+    "minimum_count_proved": true,
+    "scope": "Subsets of the original saved departures, with the same nominal finite planning prior."
+  },
+  {
+    "policy": "high_sparse80",
+    "changed_states": 8,
+    "fraction": "0.8",
+    "one_fewer_changes_gain_upper_pp": "0.610952836612935440731950861139973822497135466954693203824109",
+    "target_lower_pp": "0.623692990186318271963391483150606643817927911589918750372542",
+    "attained_lower_pp": "0.626727361016449575958611195328876161518829529277656682905635",
+    "target_upper_pp": "0.623692990186318271963391483150606643817927911589918750373139",
+    "minimum_count_proved": true,
+    "scope": "Subsets of the original saved departures, with the same nominal finite planning prior."
+  },
+  {
+    "policy": "high_sparse90",
+    "changed_states": 18,
+    "fraction": "0.9",
+    "one_fewer_changes_gain_upper_pp": "0.696874094777868591043530674448297797443742390583558464276896",
+    "target_lower_pp": "0.701654613959608055958815418544432474295168900538658594169110",
+    "attained_lower_pp": "0.702530510531124217361985419850950823728276340478070573768899",
+    "target_upper_pp": "0.701654613959608055958815418544432474295168900538658594169781",
+    "minimum_count_proved": true,
+    "scope": "Subsets of the original saved departures, with the same nominal finite planning prior."
+  }
+]

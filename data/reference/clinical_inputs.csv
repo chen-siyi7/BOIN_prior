@@ -1,0 +1,14 @@
+input,value,evidence_status,location
+toxicity target,.35,registered protocol,section 10.1
+starting dose,200 mg,registered protocol,section 10.1
+cohort size,3,registered protocol,section 10.1
+dose-level stopping cap,12,registered protocol,section 10.1
+overall stopping cap,24,registered protocol,section 10.1
+expansion target,18 total including dose-finding patients,registered protocol,section 10.1
+MN DLT counts,1/6 at 200 mg; 5/12 at 250 mg,Wu et al. 2021,Table 2
+DD DLT counts,1/6 at 200 mg; 3/12 at 250 mg,Wu et al. 2021,Table 2
+retained doses,"150, 200, 250 mg",future calculation after reported 300 mg exclusion,source evidence plus stated planning use
+toxicity window,.05,illustrative preference,study input
+nominal costs,"1, .25, .5",illustrative preference,study input
+historical discount powers,".25, .5, 1",sensitivity specifications,study input
+minimum worthwhile gain,report supported thresholds,author instruction,3 November 2026

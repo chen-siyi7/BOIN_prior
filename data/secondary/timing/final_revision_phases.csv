@@ -1,0 +1,23 @@
+phase,seconds,returncode
+Isolated input copy,0.9274906665086746,0
+Rebuild five catalogs,2.117772165685892,0
+Adaptive verification,68.17436479125172,0
+Joint family construction,238.66598916612566,0
+Historical costs construction,7.530113999731839,0
+New curve evaluation,5.290039874613285,0
+Export saved choices,0.20465004071593285,0
+Regenerate risk masses,2.2241304581984878,0
+Robust bound inputs,0.4036382082849741,0
+Robust necessary risk solve,15.779140500351787,0
+Cost bound inputs,0.19283916614949703,0
+Cost necessary risk solve,0.5940656242892146,0
+Paired generator uncertainty,0.10839929152280092,0
+Independent risk replay,21.72314929123968,0
+Export partition geometry,0.30422645900398493,0
+Independent partition coverage,0.9007394593209028,0
+Directed family gains,0.3734093327075243,0
+Directed robust gain bounds,2.7423293329775333,0
+Directed clinical gains and bounds,48.25687316711992,0
+Exact absolute risk witnesses,0.053280457854270935,0
+Continuous prior integration check,3.802886917255819,0
+Standalone lookup,0.02318787481635809,0

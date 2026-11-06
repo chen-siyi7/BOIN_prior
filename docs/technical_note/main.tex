@@ -1,0 +1,357 @@
+
+\documentclass[letterpaper,12pt]{article}
+\usepackage[margin=1in]{geometry}
+\usepackage{setspace}
+\usepackage[mathlines,edtable]{lineno}
+\usepackage{amsmath,amssymb,booktabs,xurl,float}
+\usepackage[authoryear,round]{natbib}
+\usepackage{microtype}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\doublespacing
+\renewcommand\linenumberfont{\normalfont\small\sffamily}
+\title{Supporting calculations for\\The value of prior information for final dose selection in BOIN trials}
+\author{Siyi Chen}
+\date{November 2026}
+\begin{document}
+\maketitle
+\linenumbers
+This note gives the additional model specifications, comparisons and
+computational records for the combined article. The article contains
+the method and its proofs. The accompanying data define the evaluated
+rules. Fresh searches can return different feasible rules because
+optimization is time limited.
+
+\section{Planning information and available gain}
+
+The six-dose study uses target $\varphi=.25$, cohorts of three and at
+most 30 participants, starting at dose 1. Its planning support contains
+144 curves with positive weight and additional guard curves with zero
+planning weight. Location weights are
+\[
+ q^{\rm central}=(.02,.04,.42,.42,.08,.02),\qquad
+ q^{\rm high}=(.01,.02,.04,.08,.20,.65).
+\]
+The third specification weights the six positions equally.
+Within each position, the nominal conditional distribution preserves
+the supplied curve weights.
+
+Let $H_{jf}$ denote the conditional distribution for shape family $f$
+at MTD position $j$. Only families represented with positive weight at
+that position enter the class. The support has 55 such groups.
+For a fixed rule $T$, define
+\[
+ z_{jf}(T)=E_{H_{jf}}\{P_p(T=j)-P_p(b=j)\}.
+\]
+Allowing a separate mixture of these families at every position gives
+the smallest gain
+\[
+ \min_s\sum_j q_j^s\min_f z_{jf}(T).
+\]
+The high-location analysis uses one location specification. The joint
+analysis uses the convex hull of central, high and equal location
+weights. These classes preserve the represented distributions within
+each family. They do not include arbitrary new dose--toxicity shapes.
+
+Construction introduces one auxiliary value for each position,
+bounded above by every corresponding family gain. A further auxiliary
+value is bounded by each weighted location sum. Maximizing the latter
+value gives the stated worst-family objective. Risk constraints and
+eligibility are the same as in the nominal study. Endpoint
+recommendations and one reference outcome per dose remain fixed.
+
+For the upper bound on attainable gain, a nonnegative mixture of the
+location vertices and normalized family weights gives an explicit
+member of the planning class. A bound on gain under that member also
+bounds the smallest gain over the class. The independent calculation
+checks this membership, the permitted choices and all nonnegative risk
+prices before applying the weak-duality inequality in the article.
+The resulting bounds cover deterministic and randomized rules under
+the stated restrictions.
+
+\begin{table}[H]
+\centering\small\doublespacing
+{\internallinenumbers
+\caption{Worst-family planning gain and upper bounds, percentage points.
+Construction upper is the numerical search bound. Overall upper uses
+independent likelihood enclosures and exact rational arithmetic.
+Upper bounds are rounded upward.}
+\par}
+\begin{edtable}{tabular}{lrrr}
+\toprule
+Planning class & Attained & Construction upper & Overall upper\\
+\midrule
+High locations, varying shapes & .513 & .520 & .891\\
+Varying locations and shapes & .116 & .132 & .261\\
+\bottomrule
+\end{edtable}
+\end{table}
+
+The supplied implementation encloses terminal probabilities with
+outward-rounded integer arithmetic. Prior weights are interpreted as
+their saved binary values and normalized with exact rational
+arithmetic. Signed summation then gives lower and upper gain bounds.
+The risk and gain checks are independent of the numerical optimizer.
+The construction upper bounds are numerical optimization results.
+
+\section{Bayesian dose--response comparison}
+
+The logistic comparison adapts the posterior-mean final selection of
+\citet{wakayama2025}. Their study uses six doses, target .30, 36
+participants, three link functions and Hamiltonian Monte Carlo.
+The present comparison uses target .25, 30 participants and the logit
+link on doses $(7,14,29,51,103,188)$ mg. The model is
+\[
+ \operatorname{logit}(p_j)=\beta_0+\exp(\beta_1)\log(d_j/51),
+ \qquad
+ \beta_0\sim N(\mu_0,\sigma_0^2),\quad
+ \beta_1\sim N(\mu_1,\sigma_1^2),
+\]
+with independent priors.
+
+Endpoint beliefs are $P(p_1>\varphi)=.05$ and
+$P(p_6\le\varphi)=.21$. Beta marginals express these beliefs. Their
+medians are interpolated on the logit scale across log doses.
+The model prior is fitted to the .025, .5 and .975 marginal toxicity
+quantiles. Calibration depends on the physical grid and the induced
+toxicity distributions \citep{neuenschwander2008critical,alger2026calibration}.
+A broader prior fixes the log-slope standard deviation at .75 and
+refits the other parameters. Table~\ref{tab:logit-priors} summarizes
+the two fitted priors. The supplied inputs retain the full precision.
+
+\begin{table}[H]
+\centering\small\doublespacing
+{\internallinenumbers
+\caption{Calibrated logistic priors. Standard deviations are on the
+intercept and log-slope scales.}
+\label{tab:logit-priors}
+\par}
+\begin{edtable}{tabular}{lrrrr}
+\toprule
+Prior & $\mu_0$ & $\sigma_0$ & $\mu_1$ & $\sigma_1$\\
+\midrule
+Quantile & -1.171 & 1.320 & .102 & .010\\
+Broader & -1.270 & 1.201 & .050 & .750\\
+\bottomrule
+\end{edtable}
+\end{table}
+
+Gaussian quadrature at two integration orders checks the posterior
+mean toxicities and proposed actions. The calculation uses 181 and
+241 nodes per dimension. A separate integral over log slope checks
+the fitted marginal quantiles.
+The posterior likelihood uses the complete terminal counts.
+Path coefficients cancel in posterior normalization.
+
+At each terminal outcome, the proposal selects the eligible dose
+whose posterior mean toxicity is closest to target. Endpoint choices,
+reference outcomes and no-recommendation status are then retained.
+The risk filter chooses either that proposal or BOIN. Central and
+high-location filters have their respective nominal planning
+objectives. Both logistic priors use the same grid, eligibility,
+risk limits and six requested eight-second search rounds as the
+finite-prior comparisons.
+
+The three independent evaluation libraries each contain 576 curves:
+24 in each of four shape families at every MTD position. Rules are
+fixed before these libraries are generated. Table D.1 of the combined
+article reports mean PCS and mean gain across the libraries, with the
+smallest curve-level gain across all three. These are comparisons of
+the specified adaptations under common risk requirements.
+
+\section{Uncertainty from generating evaluation curves}
+
+Terminal-outcome summation gives exact operating characteristics for
+a fixed toxicity curve, up to numerical evaluation. The primary
+average also varies because its curves are sampled. Each of its four
+generator families supplies 40 independent curves at each of six MTD
+positions. For paired differences $d_{jfi}$,
+\[
+ \widehat\Delta=\sum_{jf}(q_j/4)\bar d_{jf},\qquad
+ {\rm SE}(\widehat\Delta)=
+ \left\{\sum_{jf}(q_j/4)^2s_{jf}^2/n_{jf}\right\}^{1/2}.
+\]
+Table~\ref{tab:intervals} uses the normal approximation
+$\widehat\Delta\pm1.96\,{\rm SE}$. It describes sampling under these
+generators. It does not measure uncertainty about a future compound
+or about clinical adoption.
+
+\begin{table}[H]
+\centering\small\doublespacing
+{\internallinenumbers
+\caption{Primary mean PCS gains and approximate 95\% generator
+intervals, percentage points.}
+\label{tab:intervals}
+\par}
+\begin{edtable}{tabular}{llrr}
+\toprule
+Prior & Rule & Mean gain & Interval\\
+\midrule
+Central & Full table & .575 & $(.505,.646)$\\
+Central & 80\% table & .522 & $(.467,.577)$\\
+Central & 90\% table & .578 & $(.517,.638)$\\
+High & Full table & .522 & $(.491,.553)$\\
+High & 80\% table & .396 & $(.366,.427)$\\
+High & 90\% table & .461 & $(.430,.492)$\\
+\bottomrule
+\end{edtable}
+\end{table}
+
+\section{Comparison of risk bounds}
+
+The ordered-likelihood and Continuous Simulation Extension (CSE)
+calculations start from the same 1,716 cells and target a two-point
+risk bound. They use the same fixed central and high rules. Interior
+PCS-loss and both signs of each tail contrast are checked. The CSE
+implementation uses exact terminal expectations at each knowledge
+point \citep{yang2024cse}.
+
+Write $L$ for the likelihood ratio from knowledge point $p^0$ to $p$.
+For any event $A$ and $r>1$, the tilt bound gives
+\[
+ P_p(A)\le
+ P_{p^0}(A)^{1-1/r}
+ \{E_{p^0}(L^r)\}^{1/r}.
+\]
+Positive and negative events in a signed contrast are bounded
+separately. The negative-event lower bound uses both its complement
+and the reverse likelihood ratio. An alternative applies the tilt
+bound to the contrast shifted and scaled between zero and one.
+The calculation retains the smallest valid upper bound.
+
+The independent-sequence embedding supplies each dose with its
+largest reachable enrollment. A second embedding accounts for
+bounded stopping. For a cell with coordinate bounds
+$(\ell_j,u_j)$, define
+\[
+ \bar\psi_j=\max_{t\in[\ell_j,u_j]}
+ \log\{t^r(p_j^0)^{1-r}+
+          (1-t)^r(1-p_j^0)^{1-r}\}.
+\]
+The quantity before taking the logarithm is convex, so the coordinate
+maximum occurs at an endpoint. A nonnegative supermartingale and
+bounded stopping give
+\[
+ E_{p^0}(L_\tau^r)\le
+ \exp\left\{\max_{n\in\mathcal N}\sum_j n_j\bar\psi_j\right\},
+\]
+where $\mathcal N$ contains the reachable final enrollment vectors.
+The reverse calculation exchanges the two probability measures.
+
+All methods bisect unresolved cells along their widest coordinate.
+Children retain the smaller of their new bound and their parent's
+bound. The original comparison gives each method 60 seconds after
+initialization and at most 200,000 leaves. Its timings and refinement
+histories are supplied. Replaying to the recorded final refinement
+counts checks the reported bounds without making results depend on
+the speed of a later computer. A separate command repeats the
+resource-limited benchmark on the current computer. Independent
+moment checks compare the stopped-trial bound with direct terminal
+likelihood-ratio sums.
+
+CSE results are numerical tilt calculations. The completed
+ordered-likelihood calculation also receives the independent integer
+risk check used for the final selection rules. Table 6 of the article
+reports the original comparison.
+
+\section{Other trial designs and computational records}
+
+The supporting designs vary maximum enrollment, grid size and cohort
+size. They use target .25 and starting dose 1. Their planning curves
+have the form
+\[
+ p_i=\operatorname{logit}^{-1}
+ \{\operatorname{logit}(\varphi)+s(i-j+t)\}.
+\]
+The six slopes are $.3,.5,.8,1.2,1.8,2.6$. Interior offsets are
+$\pm.08$ and $\pm.22$. Endpoint offsets point inward with magnitudes
+$.04,.08,.15,.22$. The 24 curves at each position have equal
+conditional weight. Six-dose location weights match the main study.
+The four-dose weights are $(.04,.46,.46,.04)$ and
+$(.03,.08,.24,.65)$. The eight-dose weights are
+\[
+\begin{split}
+ q^{\rm central}&=(.02,.03,.10,.35,.35,.10,.03,.02),\\
+ q^{\rm high}&=(.01,.01,.02,.03,.05,.08,.15,.65).
+\end{split}
+\]
+
+\begin{table}[H]
+\centering\small\doublespacing
+{\internallinenumbers
+\caption{Supporting designs on fixed descriptive evaluation libraries.
+BOIN PCS is a percentage. Signed and Separate are changes in percentage
+points. Worst is the smallest curve-level change for the signed rule.}
+\par}
+\begin{edtable}{tabular}{llrrrr}
+\toprule
+Design & Prior & BOIN PCS & Signed & Separate & Worst\\
+\midrule
+6 doses, 36 participants & Central & 35.159 & .660 & .545 & -1.701\\
+6 doses, 36 participants & High & 29.877 & .305 & .294 & -1.263\\
+8 doses, 24 participants & Central & 26.162 & .363 & .367 & -1.498\\
+8 doses, 24 participants & High & 13.404 & .055 & .053 & -1.370\\
+4 doses, cohorts of 2 & Central & 36.547 & -.004 & .013 & -1.047\\
+4 doses, cohorts of 2 & High & 35.032 & .697 & .494 & -1.622\\
+\bottomrule
+\end{edtable}
+\end{table}
+
+Signed rules use both signs of each risk contrast within ordered
+cells. Separate rules bound adverse contributions state by state.
+The supporting calculations rebuild each catalog, check every saved
+rule, and recompute its operating characteristics and planning gains.
+The eight-dose partition starts from five coordinate intervals.
+The other supporting partitions start from eight. Each final
+partition has 1,716 cells. The broader search can retain a feasible
+comparator when the time-limited search does not find a better rule.
+
+The original nominal workflow takes 833.3 seconds, including
+initialization, enumeration, prior integration, optimization,
+verification and decision-table export. Its largest child process
+uses 4,588 MiB. Given those frozen inputs, the endpoint, shorter-table,
+CSE and validation stage takes 885.1 seconds with peak child memory
+of 3,647 MiB. The added robust-prior and clinical analyses have their
+own timing records. The application stage takes 33.3 seconds from
+its prepared inputs. These stages have different starting inputs
+and are not interchangeable timing estimates.
+
+The original measurements are retained as records of those
+workflows. The current R/Rcpp replay records its own phase times,
+software versions and hardware. It recomputes operating
+characteristics and verifies the frozen rules and gain bounds.
+Fresh fitting is a separate operation with explicit search limits.
+The saved tables define the article's results.
+
+The package supplies the complete decision tables, planning
+distributions, evaluation curves, risk and gain inputs, and a mapping
+from every article table to its calculation. All analysis and plotting
+programs use R or Rcpp. Final trial use requires only the observed
+counts and the prespecified table.
+
+\begin{thebibliography}{9}
+\bibitem[Alger et al.(2026)]{alger2026calibration}
+Alger E, Lee SM, Cheung YKK, Yap C.
+Calibration of priors for Bayesian model-based dose-finding trial
+designs with joint outcomes. \emph{Statistics in Medicine},
+45(23--24):e70746, 2026. doi:10.1002/sim.70746.
+
+\bibitem[Neuenschwander et al.(2008)]{neuenschwander2008critical}
+Neuenschwander B, Branson M, Gsponer T.
+Critical aspects of the Bayesian approach to phase I cancer trials.
+\emph{Statistics in Medicine}, 27(13):2420--2439, 2008.
+doi:10.1002/sim.3230.
+
+\bibitem[Wakayama et al.(2025)]{wakayama2025}
+Wakayama R, Momozaki T, Ando S.
+Improving maximum tolerated dose selection in model-assisted designs
+for phase I trials through Bayesian dose-response model.
+\emph{Pharmaceutical Statistics}, 24(6):e70046, 2025.
+doi:10.1002/pst.70046.
+
+\bibitem[Yang et al.(2024)]{yang2024cse}
+Yang J, Thompson TB, Sklar M.
+Guarantees for comprehensive simulation assessment of statistical
+methods. \emph{arXiv preprint}, arXiv:2212.10042v3, 2024.
+doi:10.48550/arXiv.2212.10042.
+\end{thebibliography}
+\end{document}

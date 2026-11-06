@@ -1,0 +1,14 @@
+"policy","objective","protection","endpoint_budget","gain_pp","upper_pp","changed","changed_endpoint","seconds"
+"central_locked","central","locked",0,0.930346870061022,0.966285256819635,121,0,47.879
+"central_uniform0","central","uniform0",0,0.930346870061022,0.973846163322134,121,0,37.288
+"central_bounded005","central","bounded005",0.005,0.944895943565751,0.994210052165546,253,28,54.716
+"high_locked","high","locked",0,0.779616237732898,0.785205780705997,169,0,52.082
+"high_uniform0","high","uniform0",0,0.779616237732898,0.785205782264358,169,0,52.363
+"high_bounded005","high","bounded005",0.005,0.761319219166402,0.789292959137182,162,0,43.968
+"robust_locked","robust","locked",0,0.235751575293403,0.274976695971087,258,0,37.963
+"robust_uniform0","robust","uniform0",0,0.220442356988966,0.397245981008815,232,0,20.55
+"robust_bounded005","robust","bounded005",0.005,0.131399063270883,0.410004948385424,129,0,22.257
+"central_logit_quantile","central","locked_logit",0,0.944163524988691,0.94972947668121,180,0,25.072
+"central_logit_weak","central","locked_logit",0,0.923339633697212,0.925276705924916,182,0,24.234
+"high_logit_quantile","high","locked_logit",0,0.50120573791636,0.502395545950907,118,0,4.86699999999996
+"high_logit_weak","high","locked_logit",0,0.496720478535823,0.498381221863919,126,0,2.68100000000004
