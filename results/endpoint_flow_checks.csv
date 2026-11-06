@@ -1,0 +1,7 @@
+"rule","endpoint","changed_reference_states","new_endpoint_states","required_integer_flow","verified_integer_flow","pass"
+"central_transport",1,0,2,0,0,TRUE
+"central_transport",6,0,0,0,0,TRUE
+"high_transport",1,0,1,0,0,TRUE
+"high_transport",6,0,15,0,0,TRUE
+"endpoint_pair",1,0,0,0,0,TRUE
+"endpoint_pair",6,1,1,27,27,TRUE

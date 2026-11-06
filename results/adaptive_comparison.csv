@@ -1,0 +1,4 @@
+"method","initial_cells","final_cells","evaluated_cells","upper_pp","seconds","independent_seconds","target_reached","scope"
+"Ordered likelihood",1716,2724,3732,1.99999492787954,1.86400000000003,0.653999999999996,TRUE,"Replay to original refinement count"
+"CSE independent",1716,174716,347716,16.7135662357435,59.1510000000001,NA,FALSE,"Replay to original refinement count"
+"CSE stopping",1716,149716,297716,12.7821593444115,61.814,NA,FALSE,"Replay to original refinement count"

@@ -1,0 +1,15 @@
+"source","rule","BOIN","recommendation","dose_mg"
+"MN","BOIN",3,3,250
+"DD","BOIN",3,3,250
+"MN","primary_MN",3,3,250
+"DD","primary_MN",3,3,250
+"MN","primary_DD",3,3,250
+"DD","primary_DD",3,3,250
+"MN","expanded_MN",3,3,250
+"DD","expanded_MN",3,3,250
+"MN","expanded_DD",3,3,250
+"DD","expanded_DD",3,3,250
+"MN","uncertain_MN",3,3,250
+"DD","uncertain_MN",3,3,250
+"MN","uncertain_sources",3,3,250
+"DD","uncertain_sources",3,3,250

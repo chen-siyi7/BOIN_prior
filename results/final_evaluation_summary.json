@@ -1,0 +1,20 @@
+{
+  "mode": "evaluate",
+  "checks": {
+    "secondary": {
+      "secondary_risk_inequalities": 448,
+      "supporting_risk_inequalities": 504,
+      "matched_rows": 57,
+      "supporting_rows": 36,
+      "supporting_planning_rows": 36,
+      "budget_rows": 16,
+      "family_evaluation_curves": 2880,
+      "clinical_evaluation_curves": 1440
+    },
+    "bound_comparisons": 8,
+    "intervals": 6
+  },
+  "seconds": 37.293,
+  "R": "4.4.1",
+  "platform": "aarch64-apple-darwin20"
+}

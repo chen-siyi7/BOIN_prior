@@ -1,0 +1,10 @@
+"specification","rule","prior","changes_per_1000_trials","patient_change_per_1000_trials","DLT_change_per_1000_trials"
+"MN_flexible","expanded_MN","MN_0.5",3.24745278271288,4.13501137682815,-4.4155530164014
+"DD_flexible","expanded_DD","DD_0.5",2.90106196367104,0.995866075536256,-3.60977608607516
+"sources_preferences","uncertain_sources","none",0.55332815150838,-0.909446872521258,-0.527044707335111
+"sources_preferences","uncertain_sources","MN_0.25",0.67487923894771,-0.896244546114033,-0.249685384360987
+"sources_preferences","uncertain_sources","MN_0.5",0.67832236417,-0.751668564155317,-0.166635690471928
+"sources_preferences","uncertain_sources","MN_1",0.639621249321836,-0.529807090337897,-0.157800295559563
+"sources_preferences","uncertain_sources","DD_0.25",0.650297221455702,-0.775750155195709,-0.16235146561483
+"sources_preferences","uncertain_sources","DD_0.5",0.586422376659664,-0.538003983285407,-0.098835534113384
+"sources_preferences","uncertain_sources","DD_1",0.461932434779148,-0.285302541438881,-0.100779314104571

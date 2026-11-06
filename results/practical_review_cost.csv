@@ -1,0 +1,7 @@
+"specification","rule","review_cost_limit_score_points","binding_prior","available_fixed_burden_at_cost_5"
+"MN_fixed","primary_MN",16.0733801263626,"MN_0.5",0.0142890625122203
+"MN_flexible","expanded_MN",32.9709213200688,"MN_0.5",0.0908342462759006
+"DD_fixed","primary_DD",7.16715315985695,"DD_0.5",0.00137652854055695
+"DD_flexible","expanded_DD",16.1968479157659,"DD_0.5",0.0324827496014378
+"MN_preferences","uncertain_MN",6.37614404344008,"MN_1",0.00320196961955545
+"sources_preferences","uncertain_sources",4.4476571678821,"none",-0.000305626838294701

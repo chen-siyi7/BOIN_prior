@@ -1,0 +1,9 @@
+"rule","method","largest_upper_pp","shared_bound_seconds","states","cells"
+"central_original","global_adverse",3.56877614012156,0.0200000000000031,312,8552
+"central_original","ordered_adverse",2.39367310217187,2.615,312,8552
+"central_original","coordinate_signed",2.4730720854324,0.963000000000001,312,8552
+"central_original","ordered_signed",1.99989144182409,2.615,312,8552
+"high_original","global_adverse",4.12740800749553,0.0200000000000031,312,8552
+"high_original","ordered_adverse",2.06629682870311,2.615,312,8552
+"high_original","coordinate_signed",2.11601149232146,0.963000000000001,312,8552
+"high_original","ordered_signed",1.99949436638748,2.615,312,8552

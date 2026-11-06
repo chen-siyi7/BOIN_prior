@@ -1,0 +1,9 @@
+{
+  "mode": "logit",
+  "checks": {
+    "logistic": 2
+  },
+  "seconds": 18.567,
+  "R": "4.4.1",
+  "platform": "aarch64-apple-darwin20"
+}

@@ -1,0 +1,5 @@
+"rule","changes","one_fewer_gain_upper_pp","required_gain_lower_pp","minimum_count_proved"
+"central_sparse80",33,0.759035031560882,0.762118076747629,TRUE
+"central_sparse90",59,0.857104343101296,0.857382836341082,TRUE
+"high_sparse80",8,0.610952836612936,0.623692990186318,TRUE
+"high_sparse90",18,0.696874094777869,0.701654613959608,TRUE
