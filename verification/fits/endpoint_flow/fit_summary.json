@@ -1,0 +1,9 @@
+{
+  "prior": "high",
+  "mode": "transport",
+  "budget": 0.02,
+  "changed": 169,
+  "gain_pp": 0.77961623773289757,
+  "risk_check": "passed",
+  "seconds": 14.485000000000001
+}

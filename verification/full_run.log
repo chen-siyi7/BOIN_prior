@@ -1,0 +1,34 @@
+Rebuilding catalogs, curve generators and partition coverage.
+Checking core and clinical risks with native integer arithmetic.
+Recomputing finite-prior gains with exact rational arithmetic.
+Recomputing clinical score gains with exact rational arithmetic.
+Clinical gain states: 1 of 32 
+Clinical gain states: 9 of 32 
+Clinical gain states: 17 of 32 
+Clinical gain states: 25 of 32 
+Checking nominal gain ceilings with independent likelihood enclosures.
+Auditing the nominal planning objective on 4151 candidate states.
+Nominal gain ceiling checked for central prior.
+Nominal gain ceiling checked for high prior.
+Nominal gain ceiling checked for equal prior.
+Clinical gain ceiling checked for primary_MN .
+Clinical gain ceiling checked for expanded_MN .
+Clinical gain ceiling checked for primary_DD .
+Clinical gain ceiling checked for expanded_DD .
+Robust gain ceiling checked: high 
+Robust gain ceiling checked: joint 
+Recalculating the independent evaluation.
+Supporting design checked: N36 
+Supporting design checked: J8 
+Supporting design checked: cohort2 
+Checking continuous historical prior sensitivity in R.
+Recalculating protocol-linked clinical consequences.
+Protocol-linked consequences and clinical benefit thresholds complete.
+Logistic posterior and filtered bank checked: quantile 
+Logistic posterior and filtered bank checked: weak 
+Adaptive comparison complete: Ordered likelihood 
+Adaptive comparison complete: CSE independent 
+Adaptive comparison complete: CSE stopping 
+Completed all in 673.74 seconds.
+      673.87 real       640.64 user        27.20 sys
+time: sysctl kern.clockrate: Operation not permitted

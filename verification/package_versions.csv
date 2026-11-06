@@ -1,0 +1,7 @@
+"package","version"
+"Rcpp","1.1.1"
+"gmp","0.7.5"
+"jsonlite","2.0.0"
+"digest","0.6.39"
+"Matrix","1.7.0"
+"highs","1.12.0.3"

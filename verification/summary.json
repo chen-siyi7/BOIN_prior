@@ -1,0 +1,47 @@
+{
+  "mode": "all",
+  "seconds": 673.73300000000006,
+  "checks": {
+    "catalogs": 5,
+    "point_enclosures": 2,
+    "core_inequalities": 750,
+    "clinical_inequalities": 208,
+    "continuation": [
+      {
+        "cases": 210,
+        "maximum_difference": 4.6185277824406512e-14,
+        "pass": true
+      }
+    ],
+    "gain_bounds": 81,
+    "minimum_tables": 4,
+    "budget_retention": 8,
+    "clinical_objectives": 6,
+    "gain_ceilings": 7,
+    "family_gain_rows": 24,
+    "robust_gain_ceilings": 2,
+    "evaluation_curves": 1440,
+    "generator_intervals": 6,
+    "secondary": {
+      "secondary_risk_inequalities": 448,
+      "supporting_risk_inequalities": 504,
+      "matched_rows": 57,
+      "supporting_rows": 36,
+      "family_evaluation_curves": 2880
+    },
+    "bound_comparisons": 8,
+    "continuous_prior": true,
+    "clinical_consequences": true,
+    "practical_impact": true,
+    "logistic_priors": 2,
+    "adaptive_comparisons": 3
+  },
+  "R": "4.4.1",
+  "platform": "aarch64-apple-darwin20",
+  "package_versions": {
+    "Rcpp": "1.1.1",
+    "gmp": "0.7.5",
+    "jsonlite": "2.0.0",
+    "digest": "0.6.39"
+  }
+}

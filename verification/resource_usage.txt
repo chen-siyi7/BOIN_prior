@@ -1,0 +1,11 @@
+The scientific R entry point completed normally and wrote its complete summary.
+Complete R replay: 673.733 seconds.
+Final evaluation additions: 37.293 seconds.
+Logistic prior refitting and posterior replay: 18.567 seconds.
+The external resource-measurement wrapper returned status 1 after R completed.
+Its attempt to read kern.clockrate was denied by the local execution environment.
+Peak resident memory is therefore unavailable for this R replay.
+Original workflow peak-memory measurements remain in data/secondary/timing/.
+The final evaluation replay also checks supporting planning gains, all risk-budget
+outcomes, every secondary curve generator and the independent clinical curves.
+These follow-up records are separate from the original complete-run timing.

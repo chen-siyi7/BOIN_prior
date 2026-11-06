@@ -1,0 +1,16 @@
+{
+  "record_date": "2026-11-05",
+  "processor": "Apple M3 Max",
+  "logical_processors": 14,
+  "physical_memory_bytes": 38654705664,
+  "physical_memory_GiB": 36,
+  "system": {
+    "sysname": "Darwin",
+    "release": "25.6.0",
+    "version": "Darwin Kernel Version 25.6.0: Fri Jul 31 19:18:53 PDT 2026; root:xnu-12377.161.14~5/RELEASE_ARM64_T6031",
+    "machine": "arm64"
+  },
+  "R": "4.4.1",
+  "platform": "aarch64-apple-darwin20",
+  "note": "Current replay hardware. Original timings retain their original scope and recorded platform."
+}

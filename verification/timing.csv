@@ -1,0 +1,21 @@
+"phase","seconds"
+"Input loading and native compilation",8.382
+"Catalogs and input checks",2.784
+"Point likelihood enclosure checks",0.0149999999999988
+"Core risk and endpoint verification",14.916
+"Clinical risk verification",0.0839999999999996
+"Exact expansion check",0.251999999999999
+"Exact core gains and table sizes",6.368
+"Exact clinical score gains",65.149
+"Independent nominal gain ceilings",299.358
+"Conditional-family gain bounds",3.125
+"Independent robust gain ceilings",95.959
+"Independent evaluation curves",1.00099999999998
+"Paired generator intervals",0.0129999999999768
+"Matched methods and supporting designs",23.3580000000001
+"Risk-bound comparisons",4.54399999999998
+"Continuous historical prior sensitivity",7.37
+"Clinical outcomes and expansion consequences",2.01300000000003
+"Practical benefit translations",0.00599999999997181
+"Logistic posterior and calibration checks",10.296
+"Adaptive ordered-likelihood and CSE replay",128.705

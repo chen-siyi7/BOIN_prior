@@ -1,0 +1,10 @@
+{
+  "status": 7,
+  "message": "Optimal",
+  "has_solution": true,
+  "seconds": 0.010999999999999233,
+  "choices": 98,
+  "flows": 0,
+  "gain_upper_pp": null,
+  "minimum_changes_bound": 22
+}

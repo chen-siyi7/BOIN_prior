@@ -1,0 +1,11 @@
+{
+  "R": "4.4.1",
+  "platform": "aarch64-apple-darwin20",
+  "system": {
+    "sysname": "Darwin",
+    "release": "25.6.0",
+    "machine": "arm64"
+  },
+  "fit_cases": ["high_90", "central_budget_001", "endpoint_flow", "clinical_primary", "clinical_uncertain_sources"],
+  "publication_status": "Local prepared code. No remote write."
+}

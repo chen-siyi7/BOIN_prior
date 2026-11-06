@@ -1,0 +1,10 @@
+{
+  "status": 13,
+  "message": "Time limit reached",
+  "has_solution": true,
+  "seconds": 3.0150000000000006,
+  "choices": 13609,
+  "flows": 2592,
+  "gain_upper_pp": 0.80387150154588738,
+  "minimum_changes_bound": null
+}
