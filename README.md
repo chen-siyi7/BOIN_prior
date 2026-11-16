@@ -1,8 +1,14 @@
 # Prior information for final dose selection in BOIN trials
 
+Public study repository: [chen-siyi7/BOIN_prior](https://github.com/chen-siyi7/BOIN_prior).
+
 This folder accompanies *The value of prior information for final dose selection in Bayesian optimal interval trials* by Siyi Chen. R handles rule construction, evaluation, sensitivity analyses and figures. Rcpp provides likelihood calculations, endpoint checks and independent risk verification. Optimization uses the R interface to HiGHS.
 
-Explanatory comments have been removed from the R and C++ sources. Required Rcpp export annotations are retained. Figures are generated in R.
+All analysis code is in R or Rcpp and contains no comments. Native functions are registered through Rcpp modules. Figures are generated in R.
+
+The 15 November 2026 release includes the standalone, fixed-choice and filtered logistic comparisons in Supplementary Table D.1. The matched comparisons use the same 1,728 evaluation curves. Their baseline differs from the main shorter-table analysis because that analysis uses a separate sample.
+
+Documentation was updated on 16 November 2026 to correct the supporting note's reference to Supplementary Table D.1. The analysis code, inputs, fitted rules and numerical results retain the validated 15 November release. Its full replay is recorded in verification/release_2026-11-15/. Current package checks are in verification/release_2026-11-16/.
 
 ## Start here
 

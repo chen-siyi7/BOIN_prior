@@ -49,7 +49,7 @@ verify_secondary <- function(output) {
   risks <- secondary_risk(o, part, protected)
   write.csv(risks, file.path(output, "secondary_core_risk_checks.csv"), row.names = FALSE)
   comparisons <- secondary_metrics(o, secondary$comparison_curves,
-    c(list(BOIN = b), secondary$policies))
+    c(list(BOIN = b), secondary$policies, standalone_logit_policies()))
   curves <- secondary$comparison_curves
   rows <- list()
   for (library in unique(curves$library)) for (prior in names(core$priors)) {

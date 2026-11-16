@@ -85,6 +85,18 @@ logit_actions <- function(posterior, locked = FALSE) {
   as.integer(action)
 }
 
+standalone_logit_policies <- function() {
+  policies <- list()
+  for (name in c("quantile", "weak")) {
+    posterior <- secondary$comparators$posterior_means[[paste0(name, "_unlocked")]]
+    action <- logit_actions(posterior)
+    stopifnot(identical(action, secondary$comparators$proposals[[paste0(name, "_unlocked")]]))
+    policies[[paste0("unfiltered_logit_", name)]] <- action
+    policies[[paste0("fixed_logit_", name)]] <- logit_actions(posterior, locked = TRUE)
+  }
+  policies
+}
+
 verify_logit_comparators <- function(output) {
   calibration <- calibrate_logit_prior()
   for (name in names(calibration$settings)) {
