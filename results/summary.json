@@ -1,6 +1,6 @@
 {
   "mode": "all",
-  "seconds": 673.73300000000006,
+  "seconds": 1595.886,
   "checks": {
     "catalogs": 5,
     "point_enclosures": 2,
@@ -25,9 +25,12 @@
     "secondary": {
       "secondary_risk_inequalities": 448,
       "supporting_risk_inequalities": 504,
-      "matched_rows": 57,
+      "matched_rows": 69,
       "supporting_rows": 36,
-      "family_evaluation_curves": 2880
+      "supporting_planning_rows": 36,
+      "budget_rows": 16,
+      "family_evaluation_curves": 2880,
+      "clinical_evaluation_curves": 1440
     },
     "bound_comparisons": 8,
     "continuous_prior": true,
