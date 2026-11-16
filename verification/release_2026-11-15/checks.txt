@@ -1,9 +1,0 @@
-All analysis code is in R or Rcpp. R and C++ sources contain no comments.
-All eight native files use Rcpp modules, preserving argument names and defaults.
-The numerical C++ function bodies match the preceding release after comment removal.
-The complete scientific replay passed, including core and clinical risk checks, gain bounds, robust priors, supporting designs, logistic calibration and CSE comparisons.
-The matched output contains 69 rule-prior combinations, including standalone and fixed-choice logistic rules.
-All five figures were regenerated in R as PDF and PNG files.
-The absolute-path Rscript invocation was checked with spaces in its path.
-Archived verification records outside this dated folder describe earlier releases.
-No public GitHub update was performed.
