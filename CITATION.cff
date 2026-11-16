@@ -6,7 +6,7 @@ authors:
   - family-names: Chen
     given-names: Siyi
     affiliation: "LSU Health Sciences Center, New Orleans"
-version: "2026.11.06"
-date-released: "2026-11-06"
-repository-code: "https://github.com/chen-siyi7/location-regularized-BOIN-selection"
+version: "2026.11.16"
+date-released: "2026-11-16"
+repository-code: "https://github.com/chen-siyi7/BOIN_prior"
 license: MIT
