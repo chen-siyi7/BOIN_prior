@@ -58,7 +58,6 @@ static double upper_double(i128 value, int exponent = 63) {
   return std::nextafter(std::ldexp(double(value), -exponent), INFINITY);
 }
 
-// [[Rcpp::export]]
 List point_mass_bounds(IntegerMatrix n, IntegerMatrix x, NumericVector coefficient,
                        NumericMatrix points) {
   if (x.nrow() != n.nrow() || x.ncol() != n.ncol() || points.ncol() != n.ncol() ||
@@ -77,7 +76,6 @@ List point_mass_bounds(IntegerMatrix n, IntegerMatrix x, NumericVector coefficie
   return List::create(_["low"] = low, _["up"] = up);
 }
 
-// [[Rcpp::export]]
 List clinical_score_bounds(IntegerMatrix n, IntegerMatrix x, NumericVector coefficient,
   NumericMatrix points, NumericMatrix weight_low, NumericMatrix weight_up,
   IntegerMatrix utility_quarters) {
@@ -118,4 +116,9 @@ List clinical_score_bounds(IntegerMatrix n, IntegerMatrix x, NumericVector coeff
   lower.attr("dim") = IntegerVector::create(k, j + 1, priors);
   upper.attr("dim") = IntegerVector::create(k, j + 1, priors);
   return List::create(_["low"] = lower, _["up"] = upper);
+}
+
+RCPP_MODULE(boin_point_bounds) {
+  Rcpp::function("point_mass_bounds", &point_mass_bounds, Rcpp::List::create(Rcpp::_["n"] = R_MissingArg, Rcpp::_["x"] = R_MissingArg, Rcpp::_["coefficient"] = R_MissingArg, Rcpp::_["points"] = R_MissingArg));
+  Rcpp::function("clinical_score_bounds", &clinical_score_bounds, Rcpp::List::create(Rcpp::_["n"] = R_MissingArg, Rcpp::_["x"] = R_MissingArg, Rcpp::_["coefficient"] = R_MissingArg, Rcpp::_["points"] = R_MissingArg, Rcpp::_["weight_low"] = R_MissingArg, Rcpp::_["weight_up"] = R_MissingArg, Rcpp::_["utility_quarters"] = R_MissingArg));
 }

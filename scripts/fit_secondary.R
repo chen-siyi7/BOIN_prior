@@ -1,4 +1,5 @@
 script <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE))
+script <- gsub("~+~", " ", script, fixed = TRUE)
 source(file.path(dirname(normalizePath(script)), "common.R"))
 root <- script_root()
 source(file.path(root, "R/project.R"))

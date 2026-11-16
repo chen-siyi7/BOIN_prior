@@ -1,0 +1,34 @@
+{
+  "clinical_audit.cpp": {
+    "module": "boin_clinical_audit",
+    "functions": "bracket_interval_audit"
+  },
+  "cse_resource.cpp": {
+    "module": "boin_cse_resource",
+    "functions": ["cse_resource_bounds", "cse_resource_moments"]
+  },
+  "cse.cpp": {
+    "module": "boin_cse",
+    "functions": "cse_bounds"
+  },
+  "endpoint_flow.cpp": {
+    "module": "boin_endpoint_flow",
+    "functions": "endpoint_flow_audit"
+  },
+  "ordered_likelihood.cpp": {
+    "module": "boin_ordered_likelihood",
+    "functions": "box_dp_extrema"
+  },
+  "point_bounds.cpp": {
+    "module": "boin_point_bounds",
+    "functions": ["point_mass_bounds", "clinical_score_bounds"]
+  },
+  "probabilities.cpp": {
+    "module": "boin_probabilities",
+    "functions": ["terminal_mass_cpp", "adjacent_double"]
+  },
+  "risk_audit.cpp": {
+    "module": "boin_risk_audit",
+    "functions": "fixedpoint_interval_audit"
+  }
+}

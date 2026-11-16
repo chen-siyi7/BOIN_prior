@@ -1,4 +1,5 @@
 script <- sub("^--file=", "", grep("^--file=", commandArgs(FALSE), value = TRUE))
+script <- gsub("~+~", " ", script, fixed = TRUE)
 source(file.path(dirname(normalizePath(script)), "common.R"))
 root <- script_root()
 source(file.path(root, "R/project.R"))
@@ -20,6 +21,9 @@ stopifnot(!any(grepl("\\.(py|pyc|pyo|ipynb)$", files)))
 other_languages <- c("py", "pyc", "pyo", "ipynb", "jl", "js", "ts", "sh", "bash", "m", "c", "java")
 stopifnot(!any(tolower(tools::file_ext(files)) %in% other_languages))
 for (path in files[grepl("\\.R$", files)]) {
-  parse(path)
+  tokens <- getParseData(parse(path, keep.source = TRUE))
+  stopifnot(!any(tokens$token == "COMMENT"))
 }
-cat("Lookup examples, unreachable-data rejection and R/Rcpp source checks pass.\n")
+for (path in files[grepl("\\.(cpp|hpp|h)$", files)])
+  stopifnot(!any(grepl("//|/\\*|\\*/", readLines(path, warn = FALSE))))
+cat("Lookup examples, unreachable-data rejection and comment-free R/Rcpp source checks pass.\n")

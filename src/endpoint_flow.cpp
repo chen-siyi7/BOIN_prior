@@ -9,7 +9,6 @@ using Integer = int64_t;
 using Wide = unsigned __int128;
 struct Edge { int to, reverse; Integer capacity; };
 
-// [[Rcpp::export]]
 DataFrame endpoint_flow_audit(IntegerMatrix n, IntegerMatrix x,
     NumericVector coefficient, IntegerVector reference, IntegerVector action,
     IntegerVector capacity, IntegerMatrix pairs) {
@@ -109,4 +108,8 @@ DataFrame endpoint_flow_audit(IntegerMatrix n, IntegerMatrix x,
       _["changed_reference_states"]=losses,_["new_endpoint_states"]=gains,
       _["required_integer_flow"]=required_out,
       _["verified_integer_flow"]=verified_out,_["pass"]=passed);
+}
+
+RCPP_MODULE(boin_endpoint_flow) {
+  Rcpp::function("endpoint_flow_audit", &endpoint_flow_audit, Rcpp::List::create(Rcpp::_["n"] = R_MissingArg, Rcpp::_["x"] = R_MissingArg, Rcpp::_["coefficient"] = R_MissingArg, Rcpp::_["reference"] = R_MissingArg, Rcpp::_["action"] = R_MissingArg, Rcpp::_["capacity"] = R_MissingArg, Rcpp::_["pairs"] = R_MissingArg));
 }

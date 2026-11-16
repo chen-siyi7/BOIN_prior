@@ -1,0 +1,7 @@
+Documentation refresh, 16 November 2026.
+The supporting technical note now refers to Supplementary Table D.1.
+Its independent TeX source and PDF match the current author-detail submission version.
+Analysis programs, inputs, rules, results and R-generated figures match the validated 15 November release.
+Current inventory, lookup and comment-free R/Rcpp checks passed.
+The full scientific replay remains recorded in verification/release_2026-11-15/.
+No public repository update was performed.

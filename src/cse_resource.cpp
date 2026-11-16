@@ -27,7 +27,6 @@ static double resource_moment(NumericMatrix low,NumericMatrix up,NumericMatrix c
   out=std::max(out,value);
  };return out;
 }
-// [[Rcpp::export]]
 List cse_resource_bounds(NumericMatrix low,NumericMatrix up,NumericMatrix center,
  NumericMatrix enroll,NumericVector orders,NumericMatrix plus,NumericMatrix minus) {
  int R=low.nrow(),P=plus.ncol();NumericMatrix out(R,P);
@@ -50,9 +49,13 @@ List cse_resource_bounds(NumericMatrix low,NumericMatrix up,NumericMatrix center
   for(int m=0;m<P;++m)out(cell,m)=std::min(aff[m],ub[m]-lb[m]);
  };return List::create(_["upper"]=out);
 }
-// [[Rcpp::export]]
 NumericVector cse_resource_moments(NumericMatrix low,NumericMatrix up,NumericMatrix center,
  NumericMatrix enroll,double order) {
  return NumericVector::create(resource_moment(low,up,center,enroll,0,order,false),
                                resource_moment(low,up,center,enroll,0,order,true));
+}
+
+RCPP_MODULE(boin_cse_resource) {
+  Rcpp::function("cse_resource_bounds", &cse_resource_bounds, Rcpp::List::create(Rcpp::_["low"] = R_MissingArg, Rcpp::_["up"] = R_MissingArg, Rcpp::_["center"] = R_MissingArg, Rcpp::_["enroll"] = R_MissingArg, Rcpp::_["orders"] = R_MissingArg, Rcpp::_["plus"] = R_MissingArg, Rcpp::_["minus"] = R_MissingArg));
+  Rcpp::function("cse_resource_moments", &cse_resource_moments, Rcpp::List::create(Rcpp::_["low"] = R_MissingArg, Rcpp::_["up"] = R_MissingArg, Rcpp::_["center"] = R_MissingArg, Rcpp::_["enroll"] = R_MissingArg, Rcpp::_["order"] = R_MissingArg));
 }

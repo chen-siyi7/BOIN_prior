@@ -34,7 +34,6 @@ static double moment(NumericMatrix lo,NumericMatrix hi,NumericMatrix center,
   }prev.swap(cur);
  }return std::max(0.,*std::max_element(prev.begin(),prev.end()));
 }
-// [[Rcpp::export]]
 List cse_bounds(NumericMatrix low,NumericMatrix up,NumericMatrix center,
  NumericVector nmax,NumericVector orders,NumericMatrix plus,NumericMatrix minus) {
  int R=low.nrow(),P=plus.ncol();NumericMatrix out(R,P);
@@ -55,4 +54,8 @@ List cse_bounds(NumericMatrix low,NumericMatrix up,NumericMatrix center,
   for(int m=0;m<P;++m)out(r,m)=std::min(aff[m],ub[m]-lb[m]);
  }
  return List::create(_["upper"]=out);
+}
+
+RCPP_MODULE(boin_cse) {
+  Rcpp::function("cse_bounds", &cse_bounds, Rcpp::List::create(Rcpp::_["low"] = R_MissingArg, Rcpp::_["up"] = R_MissingArg, Rcpp::_["center"] = R_MissingArg, Rcpp::_["nmax"] = R_MissingArg, Rcpp::_["orders"] = R_MissingArg, Rcpp::_["plus"] = R_MissingArg, Rcpp::_["minus"] = R_MissingArg));
 }

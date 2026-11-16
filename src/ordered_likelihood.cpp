@@ -12,7 +12,6 @@ static inline double score(int x,int n,double p) {
   return x*std::log(p)+(n-x)*std::log1p(-p);
 }
 
-// [[Rcpp::export]]
 List box_dp_extrema(IntegerMatrix N,IntegerMatrix X,NumericVector logA,
                     NumericMatrix low,NumericMatrix up,IntegerVector states) {
   const int J=N.ncol(),K=N.nrow(),R=low.nrow(),S=states.size();
@@ -70,4 +69,8 @@ List box_dp_extrema(IntegerMatrix N,IntegerMatrix X,NumericVector logA,
     }
   }
   return List::create(_["U"]=U,_["L"]=L);
+}
+
+RCPP_MODULE(boin_ordered_likelihood) {
+  Rcpp::function("box_dp_extrema", &box_dp_extrema, Rcpp::List::create(Rcpp::_["N"] = R_MissingArg, Rcpp::_["X"] = R_MissingArg, Rcpp::_["logA"] = R_MissingArg, Rcpp::_["low"] = R_MissingArg, Rcpp::_["up"] = R_MissingArg, Rcpp::_["states"] = R_MissingArg));
 }

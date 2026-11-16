@@ -1,6 +1,7 @@
 script_root <- function() {
   script <- grep("^--file=", commandArgs(FALSE), value = TRUE)
   if (length(script) != 1L) stop("Run this entry point with Rscript.")
+  script <- gsub("~+~", " ", script, fixed = TRUE)
   dirname(dirname(normalizePath(sub("^--file=", "", script))))
 }
 

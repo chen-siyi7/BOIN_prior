@@ -71,7 +71,6 @@ static Iv likelihood_factor(int n,int x,const Rat &p) {
   return out;
 }
 
-// [[Rcpp::export]]
 DataFrame fixedpoint_interval_audit(IntegerMatrix N,IntegerMatrix X,
     NumericVector coeff,NumericMatrix low,NumericMatrix up,
     LogicalMatrix feasible,IntegerVector states,IntegerMatrix h,
@@ -234,4 +233,8 @@ DataFrame fixedpoint_interval_audit(IntegerMatrix N,IntegerMatrix X,
   return DataFrame::create(_["policy"]=policy,_["metric"]=metric,
     _["argmax_cell"]=argmax,_["bound_pp"]=bound_pp,
     _["slack_probability"]=slack_probability,_["pass"]=passes);
+}
+
+RCPP_MODULE(boin_risk_audit) {
+  Rcpp::function("fixedpoint_interval_audit", &fixedpoint_interval_audit, Rcpp::List::create(Rcpp::_["N"] = R_MissingArg, Rcpp::_["X"] = R_MissingArg, Rcpp::_["coeff"] = R_MissingArg, Rcpp::_["low"] = R_MissingArg, Rcpp::_["up"] = R_MissingArg, Rcpp::_["feasible"] = R_MissingArg, Rcpp::_["states"] = R_MissingArg, Rcpp::_["h"] = R_MissingArg, Rcpp::_["target_num"] = R_MissingArg, Rcpp::_["target_den"] = R_MissingArg, Rcpp::_["cap_num"] = 20, Rcpp::_["cap_den"] = 1000, Rcpp::_["max_cells"] = 0, Rcpp::_["endpoint_num"] = 0));
 }

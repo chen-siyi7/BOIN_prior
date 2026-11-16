@@ -3,7 +3,6 @@
 #include <limits>
 using namespace Rcpp;
 
-// [[Rcpp::export]]
 NumericMatrix terminal_mass_cpp(IntegerMatrix n, IntegerMatrix x,
                                 NumericVector coefficient, NumericMatrix p) {
   int k = n.nrow(), j = n.ncol(), curves = p.nrow();
@@ -27,11 +26,15 @@ NumericMatrix terminal_mass_cpp(IntegerMatrix n, IntegerMatrix x,
   return mass;
 }
 
-// [[Rcpp::export]]
 NumericVector adjacent_double(NumericVector value, bool upward = true) {
   NumericVector out(value.size());
   double direction = upward ? R_PosInf : R_NegInf;
   for (R_xlen_t i=0; i<value.size(); ++i)
     out[i] = std::nextafter(value[i], direction);
   return out;
+}
+
+RCPP_MODULE(boin_probabilities) {
+  Rcpp::function("terminal_mass_cpp", &terminal_mass_cpp, Rcpp::List::create(Rcpp::_["n"] = R_MissingArg, Rcpp::_["x"] = R_MissingArg, Rcpp::_["coefficient"] = R_MissingArg, Rcpp::_["p"] = R_MissingArg));
+  Rcpp::function("adjacent_double", &adjacent_double, Rcpp::List::create(Rcpp::_["value"] = R_MissingArg, Rcpp::_["upward"] = true));
 }
